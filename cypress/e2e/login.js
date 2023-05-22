@@ -34,9 +34,11 @@ import { Given, When, Then,} from "@badeball/cypress-cucumber-preprocessor";
         cy.checkNeedHelp()
         })
 
-        When("I enter invalid {string} and {string}", function() {
-        cy.get('[id="email"]').type('samantu001gmail.com')
-        cy.get('[id="password"]').type('Stagnant/1973')
+        When("I enter invalid {string} and {string}", function(email, password) {
+        //cy.get('[id="email"]').type('samantu001gmail.com')
+        //cy.get('[id="password"]').type('Stagnant/1973')
+        cy.get('[id="email"]').type(email)
+        cy.get('[id="password"]').type(password)
         })
 
         When("I enter valid {string} and {string}", function() {

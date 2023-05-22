@@ -29,11 +29,15 @@ Feature: Login functionality
 
             @smoke
             @regression
-            Scenario: User able see Need help message on failed login attempt with invalid credentials 
+            Scenario Outline: User able see Need help message on failed login attempt with invalid credentials 
             Given I am on the login Page 
-            When I enter invalid "email" and "password"
+            When I enter invalid "<email>" and "<password>"
             When I click on the login button
             Then I should see a messsage displayed with Need help link
+                Examples:
+                    | email | password | 
+                    | invalidemail@gmail.com | Stagnant1973 | 
+                    | samantu001@gmail.com| InvalidPassword | 
 
             @smoke
             @regression
